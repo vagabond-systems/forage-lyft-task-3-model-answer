@@ -41,3 +41,13 @@ class CarFactory:
         battery = NubbinBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
+
+     @staticmethod
+        def is_service_needed_carrigan(tire_wear_array):
+            # Check if any tire's wear is greater than or equal to 0.9
+            return any(wear >= 0.9 for wear in tire_wear_array)
+    
+        @staticmethod
+        def is_service_needed_octoprime(tire_wear_array):
+            # Check if the sum of all tire wears is greater than or equal to 3
+            return sum(tire_wear_array) >= 3
